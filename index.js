@@ -1,23 +1,21 @@
 const dns = require('dns');
 
 console.log("==========================================");
-console.log("   AWSAN COMMUNICATION - INITIAL START    ");
-console.log("   Verified by: Eng. Awsan Adel Sultan    ");
+console.log("   AWSAN COMMUNICATION - FUTURE TECH      ");
+console.log("   Official Domain: awsandew.world.com   ");
+console.log("   Targeting: 6G & AI Infrastructure      ");
 console.log("==========================================");
 
-// فحص الاتصال بخوادم جوجل الموثقة في مشروعك
-dns.lookup('://world.com', (err, address) => {
-  console.log('\n[Checking Domain Integration]:');
-  if (err) {
-    console.log('Status: Domain registered in GitHub, pending live DNS propagation.');
-  } else {
-    console.log('Status: Domain is Live at: ' + address);
-  }
+// فحص سجلات IPv4 (A Records)
+dns.resolve4('awsandew.world.com', (err, addresses) => {
+  console.log('\n[IPv4 Status]: ' + (err ? 'Pending' : addresses.join(', ')));
 });
 
-dns.resolve4('google.com', (err, addresses) => {
-  console.log('\n[Testing Google Public DNS IPv4]:');
-  console.log('Result: ' + addresses.join(', '));
-  console.log('Security: Connection via Ethernet & DoT is Optimized.');
-  console.log("==========================================");
+// فحص سجلات IPv6 (AAAA Records) - بوابة الـ 6G
+dns.resolve6('awsandew.world.com', (err, addresses) => {
+  if (err) {
+    console.log('\n[IPv6 Status]: Not Activated (Action Required for 6G)');
+  } else {
+    console.log('\n[IPv6 Status]: Active at ' + addresses.join(', '));
+  }
 });
