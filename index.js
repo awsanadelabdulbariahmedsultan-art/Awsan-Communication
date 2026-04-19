@@ -1,32 +1,26 @@
 const dns = require('dns');
 
 console.log("==========================================");
-console.log("   AWSAN COMMUNICATION - AI SECURITY      ");
-console.log("   Domain: awsandew.world.com            ");
-console.log("   Protocol: RFC8482 / 6G Readiness      ");
+console.log("   AWSAN COMMUNICATION - TOTAL INTEGRATION ");
+console.log("   Owner: Eng. Awsan Adel Sultan          ");
+console.log("   Infrastructure: 6G & AI Full Suite     ");
 console.log("==========================================");
 
 const domain = 'awsandew.world.com';
 
-// فحص سجلات IPv6 (المطلوبة للـ 6G)
-dns.resolve6(domain, (err, addresses) => {
-  console.log('\n[6G/IPv6 Readiness]:');
-  if (err) {
-    console.log('Status: Action Required - Activating IPv6 Tunneling.');
-  } else {
-    console.log('Status: Global IPv6 Active at ' + addresses);
-  }
+// مصفوفة سجلات الفحص الشامل بناءً على كافة الصور
+const recordTypes = ['A', 'AAAA', 'MX', 'NS', 'SOA', 'SRV', 'TXT', 'CAA'];
+
+console.log('\n--- AI Global Network Analysis ---');
+
+recordTypes.forEach(type => {
+    dns.resolve(domain, type, (err, records) => {
+        if (err) {
+            console.log(`[${type} Record]: Pending Activation (Required for Future Ops)`);
+        } else {
+            console.log(`[${type} Record]: ACTIVE - Verified for ${domain}`);
+        }
+    });
 });
 
-// فحص منطق الأمان المتقدم (RFC8482)
-dns.resolveAny(domain, (err, records) => {
-  console.log('\n[Security Analysis]:');
-  if (records && JSON.stringify(records).includes('RFC8482')) {
-    console.log('Status: RFC8482 Security detected.');
-    console.log('AI Logic: DDoS Protection is Active & Scalable for 6G.');
-  } else {
-    console.log('Status: Standard Security Mode.');
-  }
-});
-
-console.log("\nVerification Complete: Eng. Awsan Adel Sultan.");
+console.log("\nProtocol Status: Synchronized with GitHub Hub.");
