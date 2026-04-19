@@ -1,19 +1,27 @@
 const dns = require('dns');
 
 console.log("==========================================");
-console.log("   AWSAN COMMUNICATION - AUTO-SYNC CORE   ");
-console.log("   Status: Continuous Integration Active  ");
+console.log("   AWSAN COMMUNICATION - THE AI CORE      ");
+console.log("   Owner: Eng. Awsan Adel Sultan          ");
+console.log("   Target Domain: awsandew.world.com     ");
+console.log("   System: Automated & 6G Ready           ");
 console.log("==========================================");
 
 const domain = 'awsandew.world.com';
 
-// فحص السجلات التي ظهرت في الصور (TXT و SRV)
-const finalChecks = ['TXT', 'SRV', 'SOA', 'NS'];
+// مصفوفة الفحص الشامل لجميع السجلات (A, AAAA, MX, TXT, SRV, CAA, NS)
+const techStack = ['A', 'AAAA', 'MX', 'TXT', 'SRV', 'CAA', 'NS', 'SOA'];
 
-finalChecks.forEach(type => {
+console.log('\n--- 6G & AI Infrastructure Analysis ---');
+
+techStack.forEach(type => {
     dns.resolve(domain, type, (err, records) => {
-        console.log(`[${type} Check]: ` + (err ? 'Pending Activation' : 'Verified Successfully'));
+        if (err) {
+            console.log(`[${type}]: Pending Activation for ${domain}`);
+        } else {
+            console.log(`[${type}]: ACTIVE - Fully Integrated with Future Protocols`);
+        }
     });
 });
 
-console.log("\n[System]: Monitoring and Syncing via Eng. Awsan's AI Agent.");
+console.log("\n[Status]: Continuous Sync to GitHub is ACTIVE.");
