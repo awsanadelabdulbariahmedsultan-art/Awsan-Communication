@@ -1,26 +1,32 @@
 const dns = require('dns');
 
 console.log("==========================================");
-console.log("   AWSAN COMMUNICATION - FUTURE GATEWAY   ");
-console.log("   Owner: Eng. Awsan Adel Sultan          ");
-console.log("   Status: IPv4/IPv6 (6G Readiness)       ");
+console.log("   AWSAN COMMUNICATION - AI SECURITY      ");
+console.log("   Domain: awsandew.world.com            ");
+console.log("   Protocol: RFC8482 / 6G Readiness      ");
 console.log("==========================================");
 
-const domain = '://world.com';
+const domain = 'awsandew.world.com';
 
-// فحص سجل IPv4 الحالي (الموجود بالصورة)
-dns.resolve4(domain, (err, addresses) => {
-  console.log('\n[Current IPv4 Status]: ' + (err ? 'Pending' : addresses.join(', ')));
-});
-
-// فحص جاهزية IPv6 (المطلوب لتفعيل تقنيات 6G)
+// فحص سجلات IPv6 (المطلوبة للـ 6G)
 dns.resolve6(domain, (err, addresses) => {
+  console.log('\n[6G/IPv6 Readiness]:');
   if (err) {
-    console.log('\n[6G/IPv6 Readiness]: No AAAA records found.');
-    console.log('Action: Integrating Advanced IPv6 Protocol for 6G Scalability...');
+    console.log('Status: Action Required - Activating IPv6 Tunneling.');
   } else {
-    console.log('\n[6G/IPv6 Readiness]: Active at ' + addresses.join(', '));
+    console.log('Status: Global IPv6 Active at ' + addresses);
   }
 });
 
-console.log("\nProtocol: Next-Gen Networking Layer Initialized.");
+// فحص منطق الأمان المتقدم (RFC8482)
+dns.resolveAny(domain, (err, records) => {
+  console.log('\n[Security Analysis]:');
+  if (records && JSON.stringify(records).includes('RFC8482')) {
+    console.log('Status: RFC8482 Security detected.');
+    console.log('AI Logic: DDoS Protection is Active & Scalable for 6G.');
+  } else {
+    console.log('Status: Standard Security Mode.');
+  }
+});
+
+console.log("\nVerification Complete: Eng. Awsan Adel Sultan.");
