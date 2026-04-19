@@ -1,14 +1,14 @@
-# Awsan Communication
-**Verified Owner:** Eng. Awsan Adel Sultan
-**ID:** 01010305468
-**Location:** YEMEN
-**Phone:** 00967777852433
+# Awsan Communication (Advanced Security Edition)
+**Engineer in Charge:** Eng. Awsan Adel Sultan
+**ID:** 01010305468 | **Country:** YEMEN
+**Certification:** Expert-Level Network Configuration
 
-## Network Standards
-- **Connection:** Ethernet Optimized
-- **Primary DNS (IPv4):** 8.8.8.8
-- **Secondary DNS (IPv4):** 8.8.4.4
-- **IPv6 Support:** 2001:4860:4860::8888
-- **Security:** DNS-over-TLS (dns.google)
+## Current Tech Stack:
+- **DNS-over-TLS (DoT):** Enabled for encrypted privacy between device and Google Servers.
+- **DNS-over-HTTPS (DoH):** Integrated for bypass and security.
+- **Google Public DNS IPv4:** 8.8.8.8 | 8.8.4.4
+- **Google Public DNS IPv6:** 2001:4860:4860::8888 | 2001:4860:4860::8844
+- **Connection Mode:** Permanent Ethernet Optimized.
+
 ---
-*Documented via Google Cloud Shell & GitHub*
+*This repository follows the official Google Public DNS configuration standards (IPv4/IPv6/NAT64).*
