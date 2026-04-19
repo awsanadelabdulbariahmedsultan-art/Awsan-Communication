@@ -1,26 +1,19 @@
 const dns = require('dns');
 
 console.log("==========================================");
-console.log("   AWSAN COMMUNICATION - TOTAL INTEGRATION ");
-console.log("   Owner: Eng. Awsan Adel Sultan          ");
-console.log("   Infrastructure: 6G & AI Full Suite     ");
+console.log("   AWSAN COMMUNICATION - AUTO-SYNC CORE   ");
+console.log("   Status: Continuous Integration Active  ");
 console.log("==========================================");
 
 const domain = 'awsandew.world.com';
 
-// مصفوفة سجلات الفحص الشامل بناءً على كافة الصور
-const recordTypes = ['A', 'AAAA', 'MX', 'NS', 'SOA', 'SRV', 'TXT', 'CAA'];
+// فحص السجلات التي ظهرت في الصور (TXT و SRV)
+const finalChecks = ['TXT', 'SRV', 'SOA', 'NS'];
 
-console.log('\n--- AI Global Network Analysis ---');
-
-recordTypes.forEach(type => {
+finalChecks.forEach(type => {
     dns.resolve(domain, type, (err, records) => {
-        if (err) {
-            console.log(`[${type} Record]: Pending Activation (Required for Future Ops)`);
-        } else {
-            console.log(`[${type} Record]: ACTIVE - Verified for ${domain}`);
-        }
+        console.log(`[${type} Check]: ` + (err ? 'Pending Activation' : 'Verified Successfully'));
     });
 });
 
-console.log("\nProtocol Status: Synchronized with GitHub Hub.");
+console.log("\n[System]: Monitoring and Syncing via Eng. Awsan's AI Agent.");
