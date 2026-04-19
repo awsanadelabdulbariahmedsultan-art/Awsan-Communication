@@ -12,3 +12,7 @@
 
 ---
 *This repository follows the official Google Public DNS configuration standards (IPv4/IPv6/NAT64).*
+
+## Domain Integration
+- **Project Domain:** awsandew.world.com
+- **Backend Resolver:** dns.google (8.8.8.8)
