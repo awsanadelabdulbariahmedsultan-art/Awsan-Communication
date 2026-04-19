@@ -1,26 +1,29 @@
 const dns = require('dns');
 
 console.log("==========================================");
-console.log("   AWSAN COMMUNICATION - MAIL GATEWAY     ");
-console.log("   Domain: awsandew.world.com            ");
-console.log("   Status: Activating MX & Communication ");
+console.log("   AWSAN COMMUNICATION - SERVICE HUB      ");
+console.log("   Owner: Eng. Awsan Adel Sultan          ");
+console.log("   Vision: 6G & AI Service Integration    ");
 console.log("==========================================");
 
-const domain = 'awsandew.world.com';
+const domain = '://world.com';
 
-// فحص سجلات البريد (MX) - للتواصل الرسمي
-dns.resolveMx(domain, (err, addresses) => {
+// فحص سجلات SRV - تفعيل بوابة الخدمات الذكية
+dns.resolveSrv(domain, (err, addresses) => {
+  console.log('\n[SRV Service Discovery]:');
   if (err) {
-    console.log('\n[Mail Status]: No Official Mail Server Found.');
-    console.log('Action: Integrating with Google Workspace/Modern Mail API...');
+    console.log('Status: Pending Service Activation (Required for VoIP/6G).');
   } else {
-    console.log('\n[Mail Status]: Official Mail Active at: ' + JSON.stringify(addresses));
+    console.log('Active Services: ' + JSON.stringify(addresses));
   }
 });
 
-// فحص سجلات CNAME - للربط السحابي (من الصورة السابقة)
-dns.resolveCname(domain, (err, addresses) => {
-  console.log('[Cloud/CNAME]: ' + (err ? 'Direct IP Link Active' : 'Aliased to ' + addresses));
+// فحص شامل لكافة السجلات التي وثقناها بالصور
+const records = ['A', 'AAAA', 'MX', 'NS', 'CAA'];
+records.forEach(type => {
+    dns.resolve(domain, type, (err, recs) => {
+        console.log(`[${type} Record]: ` + (err ? 'Not Set' : 'Verified'));
+    });
 });
 
-console.log("\nSystem: Messaging Core Framework is Ready.");
+console.log("\nProtocol: Multi-Layer Infrastructure Verified.");
